@@ -1,9 +1,18 @@
-var calculateResult = function (){
-   return 0;
+var calculateResult = function (whiteBalls, powerBall){
+	var index;
+	for (index = 0; index < 5; index++){
+		if ((whiteBalls[index] < 1) || (whiteBalls[index] > 59)) {
+			return -1;
+		};
+	}
+	if ((powerBall < 1) || (powerBall > 39)){
+		return -1;
+	}
+	return 0;
 }
 
-var lottery= function (){
-   var powerBall, whiteBalls, idex, result;
+var lottery = function (){
+   var powerBall, whiteBalls, index, result;
    if(process.argv.length !== 8){
        console.log("Error. Usage: node " + process.argv[1] + "power_ball (5 white balls)");
        return -1;
