@@ -23,8 +23,12 @@ var lottery = function (){
 	   whiteBalls[index] = parseInt(process.argv[2+index]);
 	}
 	result = calculateResult(whiteBalls, powerBall);
+	if(result < 0){
+		console.log('Invalid arguments.');
+		return -1;
+	}
 	if (powerBall === luckyNumber) {
-			result = result * 2;
+		result = result * 2;
 	};
 	console.log(result + ' percent chance of winning.');
 	return 0;
